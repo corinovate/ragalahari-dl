@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6C63FF"/>
+      <stop offset="100%" style="stop-color:#4A3FD9"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6584"/>
+      <stop offset="100%" style="stop-color:#FF4060"/>
+    </linearGradient>
+    <linearGradient id="photo1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2D3148"/>
+      <stop offset="100%" style="stop-color:#1A1D2E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+
+  <!-- Back photo (tilted right) -->
+  <g transform="translate(256,235) rotate(12)">
+    <rect x="-120" y="-140" width="240" height="200" rx="14" fill="#ffffff" opacity="0.25"/>
+    <rect x="-110" y="-130" width="220" height="160" rx="6" fill="#1A1D2E" opacity="0.4"/>
+  </g>
+
+  <!-- Middle photo (tilted left) -->
+  <g transform="translate(256,235) rotate(-8)">
+    <rect x="-120" y="-140" width="240" height="200" rx="14" fill="#ffffff" opacity="0.45"/>
+    <rect x="-110" y="-130" width="220" height="160" rx="6" fill="#1A1D2E" opacity="0.4"/>
+  </g>
+
+  <!-- Front photo (straight) -->
+  <g transform="translate(256,225)">
+    <rect x="-130" y="-150" width="260" height="215" rx="16" fill="#ffffff" opacity="0.9"/>
+    <!-- Image area -->
+    <rect x="-115" y="-135" width="230" height="165" rx="8" fill="#1A1D2E"/>
+    <!-- Mountain scene inside photo -->
+    <polygon points="-115,30 -40,-50 20,0 80,-70 115,30" fill="#2D3148"/>
+    <polygon points="-115,30 -60,-20 30,30" fill="#3D4168"/>
+    <!-- Sun -->
+    <circle cx="70" cy="-90" r="22" fill="#FACC15" opacity="0.8"/>
+  </g>
+
+  <!-- Download arrow circle (overlapping bottom-right) -->
+  <circle cx="370" cy="370" r="85" fill="url(#accent)"/>
+  <circle cx="370" cy="370" r="75" fill="url(#accent)" stroke="#ffffff" stroke-width="4" stroke-opacity="0.3"/>
+
+  <!-- Download arrow -->
+  <path d="M370 325 L370 395" stroke="white" stroke-width="14" stroke-linecap="round"/>
+  <path d="M338 370 L370 402 L402 370" stroke="white" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- HD badge top-right -->
+  <rect x="355" y="68" width="88" height="44" rx="12" fill="white" opacity="0.9"/>
+  <text x="399" y="98" text-anchor="middle" fill="#6C63FF" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="bold">HD</text>
+</svg>

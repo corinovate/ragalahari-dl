@@ -38,17 +38,28 @@ def build():
     if os.path.exists(spec_file):
         os.remove(spec_file)
 
+    # Check for icon file
+    icon_path = os.path.join("docs", "favicon.ico")
+    has_icon = os.path.exists(icon_path)
+    if has_icon:
+        print(f"  Icon found: {icon_path}")
+    else:
+        print("  No icon file found, building without icon")
+
     # Build the exe
     print("\n  Compiling with PyInstaller...\n")
-    subprocess.check_call([
+    cmd = [
         sys.executable, "-m", "PyInstaller",
         "--name", "ragalahari-dl",
         "--onefile",
         "--console",
         "--clean",
         "--noconfirm",
-        "ragalahari_dl.py"
-    ])
+    ]
+    if has_icon:
+        cmd.extend(["--icon", icon_path])
+    cmd.append("ragalahari_dl.py")
+    subprocess.check_call(cmd)
 
     # Check output
     exe_name = "ragalahari-dl.exe" if sys.platform == "win32" else "ragalahari-dl"
